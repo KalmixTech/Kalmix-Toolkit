@@ -5,7 +5,7 @@ Companion code to the Kalmix GNSS Handbook:
 https://www.kalmixtech.com/blogs/blog/mastering-nmea-0183-guide
 """
 
-from .parser import (
+from .Parser import (
     parse,
     GSVAssembler,
     verify_checksum,
