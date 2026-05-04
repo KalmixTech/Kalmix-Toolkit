@@ -51,7 +51,7 @@ cd Kalmix-Toolkit
 Run a built-in example:
 
 ```bash
-python NMEA/examples/multi_constellation.py
+python NMEA/Examples/multi_constellation.py
 ```
 
 Parse a GGA sentence:
@@ -80,15 +80,15 @@ RTK Fixed
 ```text
 Kalmix-Toolkit/
 ├── NMEA/
-│   ├── parser/
-│   ├── examples/
+│   ├── Parser/
+│   ├── Examples/
 │   └── README.md
 │
 ├── guides/
 │   ├── README.md
 │   └── *.md
 │
-├── tests/
+├── Tests/
 │   └── test_*.py
 │
 ├── requirements.txt
@@ -117,8 +117,8 @@ Run smoke tests:
 python -m NMEA.parser.checksum
 python -m NMEA.parser.coordinates
 python -m NMEA.parser.nmea_parser
-python NMEA/examples/multi_constellation.py
-python NMEA/examples/gsv_reassembly.py
+python NMEA/Examples/multi_constellation.py
+python NMEA/Examples/gsv_reassembly.py
 ```
 
 Run the test suite:
