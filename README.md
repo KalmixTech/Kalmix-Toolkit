@@ -57,7 +57,7 @@ python NMEA/Examples/multi_constellation.py
 Parse a GGA sentence:
 
 ```python
-from NMEA.parser import parse
+from NMEA.Parser import parse
 
 line = "$GNGGA,072446.00,3114.562,N,12128.050,E,4,21,0.6,15.2,M,8.9,M,1.0,0031*50"
 result = parse(line)
