@@ -12,13 +12,13 @@ This module is the first practical code companion to the Kalmix GNSS Handbook ar
 
 | File | Purpose |
 |---|---|
-| `parser/checksum.py` | Compute, verify, and append NMEA XOR checksums |
-| `parser/coordinates.py` | Convert DDMM.MMMM coordinates, speeds, and height fields |
-| `parser/nmea_parser.py` | Parse GGA, RMC, VTG, GSA, and GSV sentences |
-| `examples/multi_constellation.py` | Demonstrate why hard-coding `$GPGGA` is wrong |
-| `examples/gsv_reassembly.py` | Reassemble paginated GSV messages into full satellite lists |
-| `examples/read_serial.py` | Read and parse a live serial stream |
-| `examples/rtk_fix_monitor.py` | Monitor RTK Fix status transitions from GGA sentences |
+| `Parser/checksum.py` | Compute, verify, and append NMEA XOR checksums |
+| `Parser/coordinates.py` | Convert DDMM.MMMM coordinates, speeds, and height fields |
+| `Parser/nmea_parser.py` | Parse GGA, RMC, VTG, GSA, and GSV sentences |
+| `Examples/multi_constellation.py` | Demonstrate why hard-coding `$GPGGA` is wrong |
+| `Examples/gsv_reassembly.py` | Reassemble paginated GSV messages into full satellite lists |
+| `Examples/read_serial.py` | Read and parse a live serial stream |
+| `Examples/rtk_fix_monitor.py` | Monitor RTK Fix status transitions from GGA sentences |
 
 ---
 
@@ -50,8 +50,8 @@ RTK Fixed
 From the repository root:
 
 ```bash
-python NMEA/examples/multi_constellation.py
-python NMEA/examples/gsv_reassembly.py
+python NMEA/Examples/multi_constellation.py
+python NMEA/Examples/gsv_reassembly.py
 python -m NMEA.parser.checksum
 python -m NMEA.parser.coordinates
 python -m NMEA.parser.nmea_parser
@@ -60,7 +60,7 @@ python -m NMEA.parser.nmea_parser
 For live serial input:
 
 ```bash
-python NMEA/examples/read_serial.py /dev/ttyUSB0 115200
+python NMEA/Examples/read_serial.py /dev/ttyUSB0 115200
 ```
 
 ---
