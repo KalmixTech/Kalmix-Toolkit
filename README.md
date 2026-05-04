@@ -1,29 +1,56 @@
-# Kalmix Toolkit
+<p align="center">
+  <img src="https://raw.githubusercontent.com/KalmixTech/Kalmix-Hardware/main/Assets/KALMIX-Logo.png" alt="Kalmix" width="260">
+</p>
 
-Python tools and developer cheatsheets for GNSS/RTK integration.
+<h3 align="center">Developer Toolkit Repository</h3>
 
-This repository is the developer companion to the [Kalmix GNSS Handbook](https://www.kalmixtech.com/blogs/blog). It starts with practical NMEA 0183 parsing examples and will expand based on real integration needs.
+<p align="center">
+  Python tools, protocol examples, and developer cheatsheets for GNSS/RTK integration.<br>
+  Companion resources for the Kalmix GNSS Handbook.
+</p>
+
+<p align="center">
+  <a href="https://www.kalmixtech.com">Website</a> ·
+  <a href="https://www.kalmixtech.com/blogs/blog">GNSS Handbook</a> ·
+  <a href="https://github.com/KalmixTech/Kalmix-Hardware">Hardware Resources</a>
+</p>
 
 ---
 
-## Current status
+## Overview
+
+**Kalmix-Toolkit** provides lightweight developer tools and practical references for working with GNSS/RTK data streams.
+
+The repository currently starts with a working **NMEA 0183 parser** and example scripts. Additional NTRIP, RTCM, coordinate-system, and accuracy-analysis utilities will be added based on real integration needs.
+
+---
+
+## Current Status
 
 | Area | Status |
 |---|---|
-| NMEA parser | Available |
+| NMEA 0183 parser | Available |
 | NMEA examples | Available |
 | GNSS Handbook companion guides | In progress |
-| NTRIP client | Planned |
-| RTCM decoder | Planned |
+| NTRIP client examples | Planned |
+| RTCM frame utilities | Planned |
 | Coordinate utilities | Planned |
+| Accuracy analysis utilities | Planned |
 
 ---
 
 ## Quick Start
 
+Clone the repository:
+
 ```bash
 git clone https://github.com/KalmixTech/Kalmix-Toolkit.git
 cd Kalmix-Toolkit
+```
+
+Run a built-in example:
+
+```bash
 python NMEA/examples/multi_constellation.py
 ```
 
@@ -48,19 +75,30 @@ RTK Fixed
 
 ---
 
-## Repository structure
+## Repository Structure
 
 ```text
 Kalmix-Toolkit/
-├── NMEA/       # NMEA parser, coordinate helpers, and examples
-├── guides/     # GNSS Handbook companion references
-├── tests/      # pytest test cases
+├── NMEA/
+│   ├── parser/
+│   ├── examples/
+│   └── README.md
+│
+├── guides/
+│   ├── README.md
+│   └── *.md
+│
+├── tests/
+│   └── test_*.py
+│
+├── requirements.txt
+├── LICENSE
 └── README.md
 ```
 
 ---
 
-## NMEA module
+## NMEA Module
 
 The first working module is [`NMEA/`](NMEA/).
 
@@ -83,27 +121,56 @@ python NMEA/examples/multi_constellation.py
 python NMEA/examples/gsv_reassembly.py
 ```
 
+Run the test suite:
+
+```bash
+pip install -r requirements.txt
+python -m pytest -q
+```
+
 ---
 
 ## Guides
 
-See [`guides/`](guides/) for condensed developer references based on the Kalmix GNSS Handbook.
+The [`guides/`](guides/) directory contains condensed developer references based on the Kalmix GNSS Handbook.
 
-Key topics:
+| Guide | Purpose |
+|---|---|
+| `nmea-0183-cheatsheet.md` | NMEA sentence structure, common fields, checksum rules, and parsing traps |
+| `ntrip-quickstart.md` | NTRIP workflow, caster connection basics, and RTK correction setup notes |
+| `rtk-accuracy-explained.md` | CEP, RMS, R95, RTK Fixed / Float, and accuracy interpretation |
+| `coordinate-systems-guide.md` | WGS84, datums, coordinate formats, and height-reference pitfalls |
+| `rtcm-frame-reference.md` | RTCM 3.x frame structure and MSM message reference |
+| `gnss-signals-reference.md` | GNSS constellations, L1/L2/L5 bands, and signal-selection notes |
+| `how-gnss-works.md` | GNSS fundamentals: pseudorange, four satellites, and receiver clock bias |
 
-- NMEA 0183
-- NTRIP
-- RTCM
-- GNSS accuracy
-- Coordinate systems
-- GNSS signals
-- GNSS fundamentals
+For the full articles, visit the [Kalmix GNSS Handbook](https://www.kalmixtech.com/blogs/blog).
 
 ---
 
-## Related repositories
+## Related Repository
 
-- [Kalmix-Hardware](https://github.com/KalmixTech/Kalmix-Hardware) — datasheets, pinout diagrams, 3D STEP files, compliance documents, and protocol references.
+For product-level hardware files, see:
+
+[Kalmix-Hardware](https://github.com/KalmixTech/Kalmix-Hardware)
+
+It contains datasheets, interface diagrams, 3D STEP models, compliance files, and product-specific protocol references for Kalmix GNSS hardware.
+
+---
+
+## Requirements
+
+The core parser uses only the Python standard library.
+
+Optional dependencies:
+
+```text
+pyserial>=3.5
+pytest>=8.0.0
+```
+
+- `pyserial` is required only for live serial-port examples.
+- `pytest` is required only for running tests.
 
 ---
 
@@ -111,4 +178,10 @@ Key topics:
 
 Code in this repository is released under the MIT License.
 
-Kalmix product names, logos, hardware files, and proprietary documentation remain the property of Shanghai IOTARS Co., Ltd.
+Kalmix product names, logos, hardware files, and proprietary documentation remain the property of **Shanghai IOTARS Co., Ltd.**
+
+---
+
+<p align="center">
+  <sub>Shanghai IOTARS Co., Ltd. · <a href="https://www.kalmixtech.com">kalmixtech.com</a></sub>
+</p>
